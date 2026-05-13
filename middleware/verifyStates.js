@@ -1,4 +1,4 @@
-const statesData = require('.../statesData.json');
+const statesData = require('../statesData.json');
 const stateCodes = statesData.map(state => state.code);
 
 const verifyStates = (req, res, next) => {
