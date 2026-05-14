@@ -3,7 +3,7 @@ const statesData = require('../statesData.json');
 
 const mergeState = (stateData, mongoState) => {
     if (mongoState?.funfacts?.length > 0) {
-        return { ..stateData, funfacts: mongoState.funfacts };
+        return { ...stateData, funfacts: mongoState.funfacts };
     }
     return stateData;
 };
@@ -26,7 +26,7 @@ const getAllStates = async (req, res) => {
     const result = states.map(state => {
         const mongoState = mongoStates.find(m => m.stateCode === state.code);
         if (mongoState?.funfacts?.length > 0) {
-            return { ..state, funfacts: mongoState.funfacts };
+            return { ...state, funfacts: mongoState.funfacts };
         }
         return state;
     });
@@ -41,7 +41,7 @@ const getState = async (req, res) => {
 
 
     if (mongoState) {
-        return res.json({ ..stateData, funfacts: mongoState.funfacts });
+        return res.json({ ...stateData, funfacts: mongoState.funfacts });
     }
     res.json(stateData);
 };
