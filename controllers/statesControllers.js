@@ -1,4 +1,4 @@
-const State = require('../model/States');
+const State = require('../model/States.js');
 const statesData = require('../statesData.json');
 
 const mergeState = (stateData, mongoState) => {
