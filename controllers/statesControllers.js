@@ -97,7 +97,7 @@ const addFunFact = async (req, res) => {
     const mongoState = await State.findOne({ stateCode: req.code });
 
     if (mongoState) {
-        mongoState.funfacts.push(..funfacts);
+        mongoState.funfacts.push(...funfacts);
         const result = await mongoState.save();
         return res.json(result);
     }
