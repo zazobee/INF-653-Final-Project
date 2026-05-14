@@ -1,5 +1,5 @@
-const State = require('../model/States.js');
 const statesData = require('../statesData.json');
+const State = require('../model/States.js');
 
 const mergeState = (stateData, mongoState) => {
     if (mongoState?.funfacts?.length > 0) {
