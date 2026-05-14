@@ -121,13 +121,13 @@ const updateFunFact = async (req, res) => {
 
     const mongoState = await State.findOne({ stateCode: req.code });
     if (!mongoState || !mongoState.funfacts || mongoState.funfacts.length === 0) {
-        return res.status(404).json({ message: `No fun facts found for ${stateData.state}` });
+        return res.status(404).json({ message: `No Fun Facts found for ${stateData.state}` });
     }
 
 
     const adjustedIndex = index - 1;
     if (adjustedIndex < 0 || adjustedIndex >= mongoState.funfacts.length) {
-        return res.status(404).json({ message: `No fun fact found using this entry for ${stateData.state}` });
+        return res.status(404).json({ message: `No Fun Facts found using this entry for ${stateData.state}` });
     }
 
     mongoState.funfacts[adjustedIndex] = funfact;
@@ -146,12 +146,12 @@ const deleteFunFact = async (req, res) => {
 
     const mongoState = await State.findOne({ stateCode: req.code });
     if (!mongoState || !mongoState.funfacts || mongoState.funfacts.length === 0) {
-        return res.status(404).json({ message: `No fun facts found for ${stateData.state}` });
+        return res.status(404).json({ message: `No Fun Facts found for ${stateData.state}` });
     }
 
     const adjustedIndex = index - 1;
     if (adjustedIndex < 0 || adjustedIndex >= mongoState.funfacts.length) {
-        return res.status(404).json({ message: `No fun fact found using this entry for ${stateData.state}` });
+        return res.status(404).json({ message: `No Fun Facts found using this entry for ${stateData.state}` });
     }
 
     mongoState.funfacts.splice(adjustedIndex, 1);
